@@ -1,0 +1,51 @@
+
+\documentclass[12pt]{article}
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Bulley Library Web Browser}
+\author{Dillon Alterio}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Capstone Project Proposal
+\end{abstract}
+
+\section{Motivation:}
+
+In 2020 a team of students started a project with the intent of collecting educational publications of individuals who were either enrolled or worked here at Southern Connecticut State University.  This included staff and faculty publications, as well some student publications.  The project team discovered that the repository in which these publications were held was very poorly designed and operated due to how big the collection was.  The need for a tool that would allow for an overlay of a better search interface was evident.  The collection consists of over three thousand publications with some going back to the late fifties. This bibliography of publications is held on a free and open-source reference management software called Zotero.  The original project team was able to develop an application called Kerko that allowed for a user-friendly interface for sharing the collection of publications that were held in the Zotero reference manager.  This allowed for a smooth running and user-friendly search and browsing interface for anyone who desired to find a publication that met a criterion.  With the development of Kerko, Southern Connecticut would like this application (Kerko) to run off the web browser within the school’s libraries server.   
+
+\section{Overview:}
+
+The web application Kerko will be implemented to run with the school’s library server for use in searching and browsing the schools Zotero bibliography’s data.  This will allow students and faculty the ability to access an easy to use web interface for searching the bibliography’s content.  This is done by how Kerko is operated.  Kerko uses its self scheduling system to continuously update its search index which is basically a copy of the Zotero libraries data.   This means that the user will always have an up to date search index since Kerko uses Zotero’s web API to retrieve the data without ever having the user to interact with Zotero itself.   This makes for an easy to use and efficient web browser for accessing any bibliography from Zotero.  With Kerko being implemented into the schools library web page, the user will benefit because the goal of this project is to provide the faculty and students the ability to use a user-friendly web interface for accessing these important publications.  
+
+\section{Architecture:}
+
+Building a web browser within the Bulley library’s server will be done via Visual Studio Code.  HTML, CSS, and JavaScript will be used to format and present this web browser that will be stored on the library’s server.  This will be the front-end client-side development.  Kerko’s API will then be implemented into the web server.  This will be the back-end server-side development that will store the functionality of how this web browser will run.  Once a user opens this web browser, they will be presented with a well-established interface that will prove easy to operate for the user to gain the required material that they desire.   
+
+\section{Platform:}
+
+The back-end platform that this system will run on will be Kerko’s API as well as Zotero’s API.  Zotero is integrated into the Kerko application which allows the information to be extracted and updated.  Node.js will be the execution environment for the back-end development.  While Virtual Studio Code will be used as the platform for the front-end development. 
+
+\section{User Interaction and Reports:}
+
+A user should find this interface to be very easy to use.  The user will be presented with a search bar.  Next to this search bar will be various sorts of filters that will accommodate the users search preferences.  Once those filters are established, the user will then hit the blue search icon which will then present all relevant publications that matched the filters to the user.  This will make navigating three thousand plus publications viable for the user instead of having to use Zotero’s interface which isn’t the greatest interface.  Due to the numerous filters that are available, the user should be able to find or discover relevant publications that would meet the user’s needs.   
+
+\section{References:}
+
+https://github.com/whiskyechobravo/kerko/README.md
+
+
+\end{document}
