@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" type="image/png" href="../img/scsu_logo.jpg" />
+    <title>SCSU Calendar Application</title>
+</head>
+    <body>
+        <div class="row justify-content-center">
+            <!--Title-->
+            <div class="col-12 title">
+                <h1>My S<span class="schoolBlue">C</span>S<span class="SchoolBlue">U</span> Calendar</h1>
+            </div>
+
+            <!--LogIn Form-->
+            <form class=" col-6 loginForm">
+                <!--user name -->
+                <div class="form-group">
+                  <label for="uName">Username</label>
+                  <input type="text" class="form-control" id="uName" placeholder="Enter Your Username">
+                </div>
+
+                <!--password-->
+                <div class="form-group">
+                  <label for="uPassword">Password</label>
+                  <input type="password" class="form-control" id="uPassword" placeholder="Enter Your Password">
+                </div>
+              
+                <!--Buttons-->
+                <a id="newAccount" class="btn btn-primary" href="/html/newAccount.html">Create New Account </a>
+                <button id="sub" type="button" class="btn btn-primary">Submit</button>
+                <script src="/js/loginForm.js">
+                </script>
+            </form>
+        </div>
+    </body>
+</html>

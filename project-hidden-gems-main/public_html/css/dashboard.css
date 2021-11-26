@@ -1,0 +1,267 @@
+body{
+ overflow-x: hidden;
+ overflow-y: hidden;
+}
+.nav button{
+    background-color: #F5F5F5;
+}
+/*Top Heading*/
+.header{
+    font-family: 'Paytone One', sans-serif;
+    background-color: #003399;
+    color: #ffffff;
+    text-align: center;
+    height: 15%;
+    margin: 0px;
+    padding: 0px;
+}
+.header h1{
+    font-size: 60px;
+    text-shadow: #000 4px 4px;
+    text-align: center;
+    height: 100%;
+    padding-top: 15px;
+}
+.header .logout{
+    font-family: 'Paytone One', sans-serif;
+    margin: 0px;
+    width: fit-content;
+    right: 20;
+    top: 20;
+    color: #fff;
+    position: absolute;
+    background-color: cornflowerblue;
+    text-shadow: #000 2px 2px;
+
+}
+.header .logout:hover{
+    background-color: crimson;
+}
+
+/* Main */
+.main{
+    text-align: center;
+    border: 2px solid #000;
+    margin: 0px;
+    padding: 0px;
+    height: 80%;
+}
+
+/* Main nav */
+.main .nav{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    border-right: 2px solid #000;
+}
+.main .nav .nHead{
+    color: #000;
+    border-bottom: 2px solid #000;
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+    padding: 10px;
+}
+/* Main nav features */
+.main .nav .f{
+    margin: 0px;
+    padding: 10px;
+    border: 2px solid #000;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: fit-content;
+}
+
+.main .nav .f:hover{
+    background-color: #fff;
+}
+
+/* Main Content */
+.main .content p{
+    margin-top: 20px;
+    border: 2px solid #000;
+}
+/*All Functions Body*/
+.main .createGroup, .joinGroup, .info, .addEventsSection{
+    display: none;
+    margin: 0px;
+    padding: 0px;
+}
+/*All Functions Header*/
+.main .groupHeader, .joinHeader, .infoHeader, .eventHeader{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+}
+/*All Form Body*/
+.main .groupForm, .addEventsForm{
+    margin: 0px;
+    margin-top: 3%;
+    padding: 0px;
+}
+/*All Function labes */
+.main label{
+    text-decoration: underline;
+    margin: 5px;
+}
+/*All Function form-group*/
+.main  .form-group{
+    margin: 10px;
+}
+
+/*Student Info Content*/
+.main .info .content{
+    margin: 0px;
+    padding: 0px;
+}
+/*AccesLevel*/
+.main .info .content .accessLevel p{
+    text-align: center;
+    display: inline-block;
+    margin: 0px;
+    padding: 5px;
+}
+/*All labels*/
+.main .info .content .accessLevel, .firstname, .lastname, .username, .email, .scsuID, .class{
+    margin-top: 30px;
+}
+/*All p tags updated*/
+.main .info .content .firstname p, .lastname p, .username p, .email p, .scsuID p, .class p{
+    text-align: left;
+    display: inline-block;
+    margin: 0px;
+    padding: 5px;
+}
+
+/* join group content*/
+.main .joinGroup .content{
+    width: 100%;
+    margin: 0px;
+}
+.main .joinGroup .searchGroupForm{
+    margin: 0px;
+}
+.main .joinGroup .content .groupResult{
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 2px;
+    height: 200px;
+    margin: 5px;
+    background-color: #000;
+}
+
+.joinGroup .content{
+    display: none;
+}
+
+/*Footer*/
+.foot{
+    font-family: 'Paytone One', sans-serif;
+    background-color: #003399;
+    border-top: 2px solid black;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.foot p{
+    padding-top: 20px;
+}
+
+.filter{
+    border-bottom: 2px solid black;
+    padding-top: 10px;
+    margin-left: -12px;
+    width: 103%;
+    height: 10.1%;
+}
+
+.select{
+    float: right;
+    margin-right: 5%;
+}
+
+.controls{
+    margin-top: 5px;
+    border: 2px solid black;
+    background-color: #F5F5F5;
+    text-align: center;
+}
+
+.controls:hover{
+    background-color: white;
+}
+
+.calendarView{
+    background-color: white;
+    width:102%;
+    overflow-y: scroll;
+    height: 68vh;
+    margin-left: -12px;
+}
+
+#dayCalendar{
+    width: 40%;
+    border: 1px solid black;
+    background-color: #F5F5F5;
+    margin-left: 30%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+#dayCalendar > tr > th{
+    text-align: center;
+    border: 1px solid black;
+    height: 50px;
+    font-size: 24px;
+}
+
+#dayCalendar > tr > td{
+    border: 1px solid black;
+    height: 80px;
+}
+
+.day{
+    font-size: 16px;
+}
+
+.timeCol{
+    width: 30%;
+}
+
+.timeCol2{
+    width: 10%;
+}
+
+#weekCalendar{
+    width: 95%;
+    border: 1px solid black;
+    background-color: #F5F5F5;
+    margin-left: 2.5%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+#weekCalendar > tr > th{
+    text-align: center;
+    border: 1px solid black;
+    height: 50px;
+    font-size: 22px;
+    width: 12.5%;
+}
+
+#weekCalendar > tr > td{
+    border: 1px solid black;
+    height: 80px;
+}
+
+.arrowButtons{
+    background-color: #F5F5F5;
+    border:2px solid black;
+
+}

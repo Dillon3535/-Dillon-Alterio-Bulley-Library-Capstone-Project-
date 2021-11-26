@@ -1,0 +1,58 @@
+body{
+    font-family: 'Paytone One', sans-serif;
+}
+/*row that contains everything Style */
+.row{
+    background-image: url("../img/advising_cover.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+/*SCSU Header title Style*/
+.title{
+    margin-top: 100px;
+    text-align: center;
+    color: white;
+}
+.title h1{
+    font-size: 70px;
+    padding-top: 70px;
+    text-shadow: 7px 7px black;
+
+}
+.schoolBlue{
+    color: #003399;
+}
+/*Login Form Style*/
+.loginForm{
+    color: white;
+}
+
+.loginForm .form-group label{
+    font-size: 20px;
+    margin: 5px;
+    text-shadow: 2px 2px black;
+}
+
+.loginForm #sub, .loginForm #newAccount{
+    margin-top: 20px;
+    color: white;
+    text-decoration: none;
+    background-color: #003399;
+    border: #003399;
+}
+
+
+.loginForm #sub:hover, .loginForm #newAccount:hover{
+    background-color: white;
+    color: #003399;
+}
+#newAccount{
+    float: left;
+}
+#sub{
+    float: right;
+}

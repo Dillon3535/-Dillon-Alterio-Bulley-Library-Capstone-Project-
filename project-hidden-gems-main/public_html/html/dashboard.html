@@ -1,0 +1,512 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="icon" type="image/png" href="../img/scsu_logo.jpg" />
+        <script src="../../calendar.js"></script>
+        <title>Dashboard</title>
+    </head>
+
+    <body>
+        <!--Header-->
+        <div class="header row">
+            <h1>DashBoard</h1>
+            <button onclick="logout()" class="logout">Log Out</button>
+        </div>
+
+
+        <!--Main content-->
+        <div class="main row">
+            <!--Side navagation-->
+           <div class="nav col-2 justify-content-center">
+                <!--Heading-->
+                <h3 class="nHead">Navigation</h3>
+                <!--Features-->
+                <button id="createGroupBtn" onclick="showCreateGroup()" class="f col-9">Create Group</button>
+                <button id="joinGroupBtn" onclick="showJoinGroup()" class="f col-9">Join Group</button>
+                <button id="addEventBtn" onclick="showAddEvents()" class="f col-9">Add Events</button>
+                <button id="showInfoBtn" onclick="showStudentInfo()" class="f col-9">View Student Information </p>    
+           </div>
+
+            <!--Create Group Section-->
+            <div id="group" class="createGroup col-10">
+                <!--Form header-->
+                <div class="groupHeader">
+                    <h1>Create Group</h1>
+                </div>
+
+                <!--Form-->
+                <form class="groupForm row justify-content-center">
+                    <!--Group Name-->
+                    <div class="form-group className col-5">
+                        <label for="GroupName">Group Name</label>
+                        <input type="text" class="form-control" id="GroupName" placeholder="Computer Science Group">
+                    </div>
+
+                    <!--Category-->
+                    <div class="form-group Location col-9">
+                        <label for="Category">Category</label>
+                        <select name="Category" id="Category">
+			                <option value="category">All</option>
+                            <option value="SCSU">SCSU</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Athletic">Athletic</option>
+			                <option value="Club">Club</option>
+			                <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!--Description-->
+                    <div class="form-group description col-5">
+                        <label for="description">Group Description</label>
+                        <input type="textarea" class="form-control" id="description" placeholder="Enter Something about the group!">
+                    </div>
+
+		            <!--Accessibility-->
+                    <div class="form-group acces col-5">
+                        <label for="isPublic">Accessibility</label>
+                        <select class="form-control" id="isPublic">
+                            <option value="True">Public</option>
+			                <option value="False">Private</option>
+                        </select>
+		            </div>
+
+                    <!--Color-->
+		            <div class="form-group cr col-9">
+			            <label for="Color">Events Color</label>
+                        <input type="color" class="form-control" id="Color" value="#FF00FF">
+                    </div>
+
+                    <!--Submit button-->
+                    <button id="submitGroup" onclick="submitCreateGroup()" type="button" class="mt-4 btn btn-primary col-4">Submit</button>
+                </form>
+            </div>
+
+            <!--Add Events Section-->
+            <div id="add" class="addEventsSection col-10">
+                <!--Form header-->
+                <div class="eventHeader">
+                    <h1>Add an Event</h1>
+                </div>
+
+                <!--Form-->
+                <form class="addEventsForm row justify-content-center">
+                    <!--Class Name-->
+                    <div class="form-group className col-5">
+                        <label for="eventName">Event Name</label>
+                        <input type="text" class="form-control" id="eventName" placeholder="Example: CSC 330 - Javascript Lecture">
+                    </div>
+
+                    <!--Event Type-->
+                    <div class="form-group Category col-5">
+                        <label for="eventType">Category</label>
+                        <input type="text" class="form-control" id="eventType" placeholder="Example: Lecture">
+                    </div>
+
+                    <!--Location-->
+                    <div class="form-group Location col-5">
+                        <label for="Location">Location</label>
+                        <input type="text" class="form-control" id="Location" placeholder="Example: Jennings Hall 113">
+                    </div>
+                    
+		            <!--Description-->
+                    <div class="form-group Description col-5">
+                        <label for="Description">Description</label>
+                        <input type="text" class="form-control" id="Description" placeholder="Example: Weekly CSC 330 Lecture. This week we're covering AJAX.">
+                    </div>
+                    <!--Times-->
+                    <div class="row justify-content-center">
+                        <!--Start-->
+                        <div class="form-group start col-4">
+                            <label for="start">Start Time</label>
+                            <input type="text" class="form-control" id="start" placeholder="11:00">
+                        </div>
+                        <!--End-->
+                        <div class="form-group end col-4">
+                            <label for="end">End Time</label>
+                            <input type="text" class="form-control" id="end" placeholder="12:15">
+                        </div>
+                    </div>
+
+                    <!--Submit button-->
+                    <button id="submitClass" type="button" class="mt-4 btn btn-primary col-4">Submit</button>
+               </form>
+            </div>
+
+            <!--Join Group Section-->
+            <div id="joinGroup" class="joinGroup col-10"> 
+                <!--header-->
+                <div class="joinHeader">
+                    <h1>Join Group</h1>
+                </div>
+
+                <!--search-->
+                <form class="searchGroupForm row justify-content-center">
+                    <!--input-->
+                    <div class="form-group col-9">
+                        <label for="input">Enter Something to Search:</label>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Example: CSC 330 (Optional)">
+                    </div> 
+              
+                    <!--Input Type-->
+                    <div class="form-group col-9">
+                        <label for="groupCategory">Category</label>
+                        <select name="groupCategory" id="groupCategory">
+			                <option value="category">All</option>
+                            <option value="SCSU">SCSU</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Athletic">Athletic</option>
+			                <option value="Club">Club</option>
+			                <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+		    <div class="form-group col-9">
+			<label for="groupAccess">Accessibility</label>
+			<select name="groupAccess" id="groupAccess">
+			    <option value="true">Public</option>
+			    <option value="false">Private</option>
+			</select>
+		    </div>
+
+                    <!--Submit button-->
+                    <div class="form-group col-9">
+                        <button id="submitSearch" type="button" onclick="groupSearch()" class="mt-4 btn btn-primary col-2">Submit</button>
+                    </div>
+                </form>
+
+                <!--UPDATE WHEN SEARCH FOUND-->
+                <div id="content" class="content row justify-content-center">
+                    <div id="searchReslut" class="groupResult col-4">
+                        <h2 id="groupName" class="mt-4">GroupName</h2>
+                        <p id="category">Category</p>
+                        <button id="joinGroupBTN" type="button" class="btn btn-success">Join Group</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Student Information-->
+            <div id="studentInformation" class="info col-10">
+                <!--Form header-->
+                <div class="infoHeader">
+                    <h1>Student Informtion</h1>
+                </div>
+
+                <!--content-->
+                <div class="content row justify-content-center">
+                    <!--AccessLevel-->
+                    <div class="accessLevel col-9">
+                        <p class="col-4">Access Level:</p>
+                        <p class="col-4" id="ACL">NULL</p>
+                    </div>
+                    <!--first name-->
+                    <div class="firstname col-6">
+                        <p class="col-3">First Name:</p>
+                        <p class="col-4" id="fn">NULL</p>
+                    </div>
+                    <!--last name-->
+                    <div class="lastname col-6">
+                        <p class="col-3">Last Name:</p>
+                        <p class="col-4" id="ln">NULL</p>
+                    </div>
+
+                    <!--username-->
+                     <div class="username col-6">
+                        <p class="col-3">Username:</p>
+                        <p class="col-4" id="un">NULL</p>
+                    </div>
+
+                    <!--email-->
+                    <div class="email col-6">
+                        <p class="col-3">Student Email:</p>
+                        <p class="col-4" id="em">NULL</p>
+                    </div>
+
+                    <!--ID-->
+                    <div class="scsuID col-6">
+                        <p class="col-3">SCSU ID:</p>
+                        <p class="col-4" id="id">NULL</p>
+                    </div>
+
+                    <!--Student Class-->
+                    <div class="class col-6">
+                        <p class="col-3">Class Status:</p>
+                        <p class="col-4" id="sc">NULL</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Main-->
+            <div id="main" class="content col-10 justify-content-center">
+                <!-- <p>-This is where the calendar will go-</p class="col-7"> -->
+                <div class="filter">
+                    <input class="arrowButtons" type="button" value="<" onclick="setPrevious()">
+                    <input class="arrowButtons" type="button" value=">" onclick="setNext()">
+                    <input class="controls" type="button" value="Today" onclick="setDayCalendar('today')" >
+                    <input class="controls" id="monthPicker"  type="date"  onchange="changeView()" >
+                    <select class="select controls" id="viewPicker" onchange="changeView()">
+                        <option id="day">Day</option>
+                        <option id="week">Week</option>
+                    </select>
+                </div>
+                <div id="calendarView" class="calendarView">
+                </div>
+           </div>
+           
+           <!--LOCAL SCRIPT TO STYLE WITHOUT SERVER RUNNING
+           <script>
+                // button function for addEvents 
+                function showAddEvents(){
+                    // nav buttons 
+                    var addButton = document.getElementById("addEventBtn");
+                    var joinButton = document.getElementById("joinGroupBtn");
+
+                    var infoButton = document.getElementById("showInfoBtn");
+                    var createButton = document.getElementById("createGroupBtn");
+                    // content pages 
+                    var showAddEvent = document.getElementById("add");
+                    var main = document.getElementById("main");
+                    var createGroup = document.getElementById("group");
+                    var joinGroup = document.getElementById("joinGroup");
+                    var studentInfo = document.getElementById("studentInformation");
+                    
+                    // show/Hide 
+                    if (showAddEvent.style.display === "block") {
+                        showAddEvent.style.display = "none";
+                        createGroup.style.display = "none";
+                        joinGroup.style.display = "none";
+                        studentInfo.style.display = "none";
+                        main.style.display = "block";
+                        
+                        //button color
+                        addButton.style.backgroundColor ="#F5F5F5";
+                        addButton.style.color = "#000";
+
+                        infoButton.style.backgroundColor ="#F5F5F5";
+                        infoButton.style.color = "#000";
+
+                        joinButton.style.backgroundColor ="#F5F5F5";
+                        joinButton.style.color = "#000";
+
+                        createButton.style.backgroundColor ="#F5F5F5";
+                        createButton.style.color = "#000";
+                    } 
+                    else {
+                        showAddEvent.style.display = "block";
+                        joinGroup.style.display = "none";
+                        studentInfo.style.display = "none";
+                        main.style.display = "none";
+                        createGroup.style.display = "none";
+
+                        // change button blue 
+                        addButton.style.backgroundColor ="#003399";
+                        addButton.style.color = "#fff";
+                
+                        //every other button
+                        infoButton.style.backgroundColor ="#F5F5F5";
+                        infoButton.style.color = "#000";
+
+                        joinButton.style.backgroundColor ="#F5F5F5";
+                        joinButton.style.color = "#000";
+
+                        createButton.style.backgroundColor ="#F5F5F5";
+                        createButton.style.color = "#000";
+                    }       
+                }
+                // button function for create Group
+                function showCreateGroup(){
+                    // nav buttons 
+                    var addButton = document.getElementById("addEventBtn");
+                    var joinButton = document.getElementById("joinGroupBtn");
+
+                    var infoButton = document.getElementById("showInfoBtn");
+                    var createButton = document.getElementById("createGroupBtn");
+
+                    // content pages 
+
+                    var showCreateGroup = document.getElementById("group");
+                    var main = document.getElementById("main");
+                    var addEvent = document.getElementById("add");
+                    var joinGroup = document.getElementById("joinGroup");
+                    var studentInfo = document.getElementById("studentInformation");
+
+                    //show/Hide
+                    if (showCreateGroup.style.display === "block") {
+                        showCreateGroup.style.display = "none";
+                        addEvent.style.display = "none";
+                        joinGroup.style.display = "none";
+                        studentInfo.style.display = "none";
+                        main.style.display = "block";
+
+                        //button color
+                        addButton.style.backgroundColor ="#F5F5F5";
+                        addButton.style.color = "#000";
+
+                        infoButton.style.backgroundColor ="#F5F5F5";
+                        infoButton.style.color = "#000";
+
+                        joinButton.style.backgroundColor ="#F5F5F5";
+                        joinButton.style.color = "#000";
+
+                        createButton.style.backgroundColor ="#F5F5F5";
+                        createButton.style.color = "#000";
+                    } 
+                    else {
+                        showCreateGroup.style.display = "block";
+                        joinGroup.style.display = "none";
+                        studentInfo.style.display = "none";
+                        main.style.display = "none";
+                        addEvent.style.display = "none";
+                        
+                        // change button blue 
+                        createButton.style.backgroundColor ="#003399";
+                        createButton.style.color = "#fff";
+                
+                        //every other button
+                        infoButton.style.backgroundColor ="#F5F5F5";
+                        infoButton.style.color = "#000";
+
+                        joinButton.style.backgroundColor ="#F5F5F5";
+                        joinButton.style.color = "#000";
+
+                        addButton.style.backgroundColor ="#F5F5F5";
+                        addButton.style.color = "#000";
+                    }       
+                }
+                // button function for join group
+                function showJoinGroup(){
+                    // nav buttons 
+                    var addButton = document.getElementById("addEventBtn");
+                    var joinButton = document.getElementById("joinGroupBtn");
+
+                    var infoButton = document.getElementById("showInfoBtn");
+                    var createButton = document.getElementById("createGroupBtn");
+
+                    // content pages
+                    var createGroup = document.getElementById("group");
+                    var main = document.getElementById("main");
+                    var addEvent = document.getElementById("add");
+                    var joinGroup = document.getElementById("joinGroup");
+                    var studentInfo = document.getElementById("studentInformation");
+
+                    if (joinGroup.style.display === "block") {
+                        joinGroup.style.display = "none";
+                        createGroup.style.display = "none";
+                        addEvent.style.display = "none";
+                        studentInfo.style.display = "none";
+                        main.style.display = "block";
+
+                        //button color
+                        addButton.style.backgroundColor ="#F5F5F5";
+                        addButton.style.color = "#000";
+
+                        infoButton.style.backgroundColor ="#F5F5F5";
+                        infoButton.style.color = "#000";
+
+                        joinButton.style.backgroundColor ="#F5F5F5";
+                        joinButton.style.color = "#000";
+
+                        createButton.style.backgroundColor ="#F5F5F5";
+                        createButton.style.color = "#000";
+                    }
+                    else {
+                        joinGroup.style.display = "block";
+                        createGroup.style.display = "none";
+                        studentInfo.style.display = "none";
+                        main.style.display = "none";
+                        addEvent.style.display = "none";
+
+                        // change button blue 
+                        joinButton.style.backgroundColor ="#003399";
+                        joinButton.style.color = "#fff";
+                
+                        //every other button
+                        infoButton.style.backgroundColor ="#F5F5F5";
+                        infoButton.style.color = "#000";
+
+                        createButton.style.backgroundColor ="#F5F5F5";
+                        createButton.style.color = "#000";
+
+                        addButton.style.backgroundColor ="#F5F5F5";
+                        addButton.style.color = "#000";
+                    }
+                }   
+                // button function for studentInfo
+                function showStudentInfo(){
+                    // nav buttons 
+                    var addButton = document.getElementById("addEventBtn");
+                    var joinButton = document.getElementById("joinGroupBtn");
+
+                    var infoButton = document.getElementById("showInfoBtn");
+                    var createButton = document.getElementById("createGroupBtn");
+
+                    // content pages
+                    var createGroup = document.getElementById("group");
+                    var main = document.getElementById("main");
+                    var addEvent = document.getElementById("add");
+                    var joinGroup = document.getElementById("joinGroup");
+                    var studentInfo = document.getElementById("studentInformation");
+
+                    if (studentInfo.style.display === "block") {
+                        joinGroup.style.display = "none";
+                        createGroup.style.display = "none";
+                        addEvent.style.display = "none";
+                        studentInfo.style.display = "none";
+                        main.style.display = "block";
+
+                        //button color
+                        addButton.style.backgroundColor ="#F5F5F5";
+                        addButton.style.color = "#000";
+
+                        infoButton.style.backgroundColor ="#F5F5F5";
+                        infoButton.style.color = "#000";
+
+                        joinButton.style.backgroundColor ="#F5F5F5";
+                        joinButton.style.color = "#000";
+
+                        createButton.style.backgroundColor ="#F5F5F5";
+                        createButton.style.color = "#000";
+                    }
+                    else {
+                        studentInfo.style.display = "block";
+                        createGroup.style.display = "none";
+                        joinGroup.style.display = "none";
+                        main.style.display = "none";
+                        addEvent.style.display = "none";
+
+                        // change button blue 
+                        infoButton.style.backgroundColor ="#003399";
+                        infoButton.style.color = "#fff";
+                
+                        //every other button
+                        createButton.style.backgroundColor ="#F5F5F5";
+                        createButton.style.color = "#000";
+
+                        joinButton.style.backgroundColor ="#F5F5F5";
+                        joinButton.style.color = "#000";
+
+                        addButton.style.backgroundColor ="#F5F5F5";
+                        addButton.style.color = "#000";
+                    }
+                }
+            </script>
+            -----------------DO NOT REMOVE ABOVE--------------------------->
+
+        </div>
+
+        <!--Footer-->
+        <footer class="foot row">
+            <p>CSC 330</p>
+        </footer>
+
+        <!--Button Navigation Functions-->
+        <script src="../js/dashboard.js"></script>
+        
+    </body>
+</html>

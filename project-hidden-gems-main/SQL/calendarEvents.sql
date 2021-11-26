@@ -1,0 +1,68 @@
+DROP DATABASE IF EXISTS csc330_calendar;
+CREATE DATABASE csc330_calendar;
+USE csc330_calendar;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users
+(
+scsuID INT NOT NULL,
+username VARCHAR(50) NOT NULL,
+hashedPassword binary(60) NOT NULL,
+firstName VARCHAR(100) NOT NULL,
+lastName VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL,
+class CHAR(8) NOT NULL,
+accessLevel CHAR(30) NOT NULL,
+PRIMARY KEY (scsuID)
+);
+
+DROP TABLE IF EXISTS groups;
+CREATE TABLE groups
+(
+groupID INT NOT NULL AUTO_INCREMENT,
+leaderID INT NOT NULL,
+name VARCHAR(100) NOT NULL,
+category VARCHAR(50) NOT NULL,
+description VARCHAR(100) NOT NULL,
+color VARCHAR(7) NOT NULL,
+isPublic VARCHAR(5) NOT NULL,
+PRIMARY KEY (groupID)
+);
+
+DROP TABLE IF EXISTS events;
+CREATE TABLE events
+(
+eventID INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+type VARCHAR(50) NOT NULL,
+location VARCHAR(50) NOT NULL,
+shortDescription VARCHAR(50),
+description VARCHAR(500),
+startTime DATETIME NOT NULL,
+endTime DATETIME NOT NULL,
+PRIMARY KEY(eventID)
+);
+
+DROP TABLE IF EXISTS userGroups;
+CREATE TABLE userGroups
+(
+uid INT NOT NULL AUTO_INCREMENT,
+userID INT NOT NULL,
+groupID INT NOT NULL,
+PRIMARY KEY (uid)
+);
+
+DROP TABLE IF EXISTS groupEvents;
+CREATE TABLE groupEvents
+(
+uid INT NOT NULL AUTO_INCREMENT,
+groupID INT NOT NULL,
+eventID INT NOT NULL,
+PRIMARY KEY (uid)
+);
+
+
+ALTER TABLE userGroups ADD FOREIGN KEY (userID) REFERENCES users(scsuID);
+ALTER TABLE userGroups ADD FOREIGN KEY (groupID) REFERENCES groups(groupID);
+ALTER TABLE groupEvents ADD FOREIGN KEY (groupID) REFERENCES groups(groupID);
+ALTER TABLE groupEvents ADD FOREIGN KEY (eventID) REFERENCES events(eventID);
+

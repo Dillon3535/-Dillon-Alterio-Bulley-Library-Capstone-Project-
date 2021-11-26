@@ -1,0 +1,92 @@
+body{
+    text-align: left;
+    font-family: 'Paytone One', sans-serif;
+}
+/*top heading*/
+.header{
+    background-color: #003399;
+    border-bottom: 2px solid black;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    height: 15%;
+}
+.header h1{
+    padding-top: 20px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 4px 4px black;
+    font-size: 60px;
+}
+
+.header p{
+    margin-top: 30px;
+}
+
+.header a{ 
+    text-align: center;
+    height: fit-content;
+    text-decoration: none;
+    color: #fff;
+    width: fit-content;
+    padding: 5px;
+}
+.main{
+    height: 88%;
+    margin: 0px;
+    padding: 0px;
+}
+/*welcome*/
+.welcome{
+    margin-top: 60px;
+    text-align: center;
+    border: black 2px solid;
+    background-color: #ebecf0;
+    height: fit-content;
+    width: 80%;
+    margin-bottom: 60px;
+
+}
+.main .loginform{
+    border: 2px solid #000;
+    padding: 20px;
+    height: auto;
+}
+/*form*/
+label{
+    margin: 5px;
+}
+
+form-group{
+    margin-top: 20px;
+}
+
+#sub{
+    margin-top: 20px;
+}
+
+#subNA{
+    margin-top: 15px;
+}
+
+.footer{
+    background-color: #003399;
+    border-top: 2px solid black;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+
+    padding: 0px;
+    width: 100%;
+}
+
+.footer p{
+    padding-top: 20px;
+}
+
+img{
+    width: 100%;
+}

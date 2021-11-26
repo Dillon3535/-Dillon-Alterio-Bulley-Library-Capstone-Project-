@@ -1,0 +1,104 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/newAccount.css">
+        <link rel="icon" type="image/png" href="../img/scsu_logo.jpg" />
+        <title>Create New Account</title>
+    </head>
+
+    <body>
+        <!--Header-->
+        <div class="header row justify-content-center">
+            <h1 class="col-12">Create an Account</h1>
+            <!--IF After submit it doesnt redirct auto -->
+            <p class="col-8"> <a class="btn-primary" href="/html/login.html">Back</a></p>
+        </div>
+
+        <!--Main content-->
+        <div class="main row justify-content-center">
+            
+            <!--welcome header-->
+            <div class="col-12 welcome">
+                <h1>Welcome to My SCSU Calendar</h1>
+            </div>
+
+            <div class="col-3">
+                <img src="../img/scsu_logo.jpg" alt="">
+            </div>
+
+            <!--LogIn Form-->
+            <form class=" col-6 loginForm">
+                <div class="row">
+                    <!--First Name-->
+                    <div class="form-group firstName col-6">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter Your First Name">
+                    </div>
+
+                    <!--Last Name-->
+                    <div class="form-group lastName col-6">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter Your Last Name">
+                    </div>
+                </div>
+              
+                <!--UserName-->
+                <div class="form-group">
+                    <label for="uName">Username</label>
+                    <input type="text" class="form-control" id="uName" placeholder="Enter Your Username">
+                </div>
+		
+		        <!--Password-->
+		        <div class="form-group">
+                    <label for="uPassword">Password</label>
+                    <input type="password" class="form-control" id="uPassword" placeholder="Enter Your Password">
+                </div>
+
+                <!--Email-->
+                <div class="form-group email">
+                    <label for="studentEmail">Email</label>
+                    <input type="text" class="form-control" id="studentEmail" placeholder="Enter Your Student Email">
+                </div>
+
+                <div class="row">
+                    <!--Student ID-->
+                    <div class="form-group id col-6">
+                        <label for="studentID">Student ID</label>
+                        <input type="text" class="form-control" id="studentID" placeholder="Enter Your Student ID">
+                    </div>
+
+                    <!--Class status (freshmen/ etc)-->
+                    <div class="form-group cStatus col-6">
+                        <label for="classStatus">Class Status</label>
+                        <select type="text" class="form-control" id="classStatus">
+                            <option value="Freshmen">Freshman</option>
+                            <option value="Sophomore">Sophomore</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Graduate Student">Graduate Student</option> 
+                        </select>
+                    </div>
+                </div>
+
+                <!--Submit button-->
+                <button id="subNA" type="button" class="btn btn-primary col-12">Submit</button>
+            </form>
+            
+            <div class="col-3">
+                <img src="../img/scsu_logo.jpg" alt="">
+            </div>
+        </div>
+	    <script src = "/js/newAccount.js"></script>
+
+        <!--Footer-->
+        <div class="footer row justify-content-center">
+            <p>CSC 330</p>
+        </div>
+    </body>
+</html>
